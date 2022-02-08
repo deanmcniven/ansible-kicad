@@ -2,16 +2,13 @@
 - name: Install Kicad PPA
   become: true
   apt_repository:
-    repo: ppa:js-reynaud/kicad-5
+    repo: ppa:kicad/kicad-6.0-releases
     update_cache: yes
 
-- name: Install Kicad 5
+- name: Install Kicad 6
   become: true
   apt:
     pkg:
       - kicad
-      - kicad-footprints
-      - kicad-packages3d
-      - kicad-symbols
-      - kicad-templates
+      - kicad-libraries
     state: present
